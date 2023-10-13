@@ -1,0 +1,8 @@
+// index.ts -> index.js 컴파일 할때 옵션을 여기에 기입
+// 컴파일 명령은 tsc -w 입력하고 코드 작성하면 됨
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "CommonJS"
+  }
+}
