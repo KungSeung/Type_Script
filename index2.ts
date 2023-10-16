@@ -41,3 +41,58 @@ const a5: isAdult = (age) => {
 };
 
 a5(33);
+
+// interface로 클래스를 정의 가능 : implements(상속) 사용, extends(확장) 사용
+interface Car {
+  color: string;
+  wheels: number;
+  start(): void;
+}
+
+interface Benz extends Car {
+  door: number;
+  stop(): void;
+}
+
+const benz: Benz = {
+  color: "black",
+  wheels: 4,
+  start(): void {
+    console.log("go...");
+  },
+  door: 5,
+  stop() {
+    console.log("stop..");
+  },
+};
+
+class BMW implements Car {
+  color;
+  wheels = 4;
+  constructor(c: string) {
+    this.color = c;
+  }
+  start(): void {
+    console.log("go...");
+  }
+}
+
+const B = new BMW("green");
+console.log(B);
+B.start();
+
+// 동시에 확장도 가능
+
+interface Car2 {
+  color: string;
+  wheels: number;
+  start(): void;
+}
+
+interface Toy {
+  name: string;
+}
+
+interface ToyCar2 extends Car2, Toy {
+  price: number;
+}
