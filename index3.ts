@@ -44,3 +44,25 @@ function showName(this: User, age: number, gender: "m" | "f") {
 
 const a10 = showName.bind(Sam2);
 a10(30, "m");
+
+interface User3 {
+  name: string;
+  age: number;
+}
+
+// 오버로드
+function join(name: string, age: number): User3;
+function join(name: string, age: string): string;
+function join(name: string, age: number | string): User3 | string {
+  if (typeof age === "number") {
+    return {
+      name,
+      age,
+    };
+  } else {
+    return "나이는 숫자로 입력해주세요";
+  }
+}
+
+const sam5: User3 = join("Sam", 30);
+const jane: string = join("Jane", "30");
