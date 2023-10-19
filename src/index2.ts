@@ -68,7 +68,7 @@ const benz: Benz = {
 
 class BMW implements Car {
   color;
-  wheels = 4;
+  wheels: 4;
   constructor(c: string) {
     this.color = c;
   }
